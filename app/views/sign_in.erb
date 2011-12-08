@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      <h1>Einloggorn...</h1>
+    </div>
+    <div class="span10">
+      <h2>Einloggen</h2>
+      <form id="sign_in_form" action="<%= url '/users/sign_in' %>" method="post">
+        <fieldset>
+          <div class="clearfix">
+            <label for='email'>Email</label>
+            <div class="input">
+              <input class="xlarge" id="email" name="email" type="email"/>
+            </div>
+          </div>
+
+          <div class="clearfix">
+            <label for='password'>Password</label>
+            <div class="input">
+              <input class="xlarge" id="password" name="password" type="password"/>
+            </div>
+          </div>
+
+          <div class="actions well">
+            <input type="submit" class="btn primary" value="Anmelden" />
+          </div>
+
+        </fieldset>
+
+      </form>
+    </div>
+  </div>
+</div>
