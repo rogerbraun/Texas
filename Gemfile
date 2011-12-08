@@ -8,3 +8,14 @@ gem "dm-migrations"
 gem "dm-validations"
 
 gem "bcrypt-ruby", :require => "bcrypt"
+
+group :test do
+  gem "rack-test", :require => "rack/test"
+  gem "capybara"
+  gem "rspec"
+end
+
+group :development do
+  gem "libnotify"
+  gem "guard-rspec"
+end

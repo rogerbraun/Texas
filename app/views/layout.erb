@@ -1,9 +1,28 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" />
+    <link rel="stylesheet" href="<%= url '/css/site.css' %>" />
   </head>
   <body>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container">
+          <a class="brand">
+            Texas
+          </a>
+          <ul class="nav">
+            <% if logged_in? %>
+              <li><a id="documents_link" href="<%= url '/documents' %>">Dokumente</a></li>
+            <% end%>
+          </ul>
+          <ul class="nav secondary-nav">
+            <li><a id="login_link" href="<%= url '/users/sign_in' %>">Anmelden</a></li>
+            <li><a id="registration_link" href="<%= url '/users/new' %>">Registrieren</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

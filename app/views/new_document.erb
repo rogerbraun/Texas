@@ -1,0 +1,25 @@
+<div class="container">
+  <section>
+    <div class="row">
+      <div class="span6">
+        <h1>Dokument anlegorn...</h1>
+      </div>
+      <div class="span10">
+        <h2>Neues Dokument anlegen</h2>
+        <form id="new_document_form" action="<%= url '/documents/new' %>" method="post" class="form-stacked">
+          <fieldset>
+            <div class="clearfix">
+              <label for='title'>Titel</label>
+              <div class="input">
+                <input class="span10" id="title" name="title" type="text"/>
+              </div>
+            </div>
+            <div class="actions well">
+              <input type="submit" class="btn primary" value="Dokument anlegen" />
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>

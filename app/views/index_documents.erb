@@ -1,0 +1,29 @@
+<div class="container">
+  <section>
+    <div class="row">
+      <div class="page-header">
+        <h1>Dokumente</h1>
+      </div>
+      <div class="span6">
+        <h2>Sachen machen</h2>
+        <p><a href="<%= url '/documents/new'%>">Dokument anlegen</a></p>
+      </div>
+      <div class="span10">
+        <table>
+          <thead>
+            <tr>
+              <th>Name des Dokuments</th>
+              <th></th>
+            </tr>
+          </thead>
+        <% @documents.each do |document| %>
+          <tr>
+            <td><%= document.title %></th>
+            <td><a href="<%= url "/documents/#{document.id}"%>" class="btn">Ansehen</a></th>
+          </tr>
+        <% end %>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
