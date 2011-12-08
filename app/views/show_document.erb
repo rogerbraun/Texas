@@ -4,6 +4,27 @@
       <div class="page-header">
         <h1><%= @document.title %></h1>
       </div>
+      <div class="span6">
+        <h2>Aktionen</h2>
+        <p>
+        <a id="new_file_link" href="<%= url "/documents/#{@document.id}/files/new" %>" class="btn">Neue Datei</a>
+        <p>
+        <a id="compile_link" href="<%= url "/documents/#{@document.id}/compile" %>" class="btn primary">Kompilieren</a>
+      </div>
+      <div class="span10">
+        <table>
+          <thead>
+            <tr>
+              <th>Dateiname</th>
+            </tr>
+          </thead>
+          <% @document.files.each do |file| %>
+            <tr>
+              <td><%= file %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
     </div>
   </section>
 </div>

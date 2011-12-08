@@ -8,6 +8,11 @@ class Document
 
   after :create, :make_folders
 
+  def files
+    path = File.join(self.folder, "**", "*")
+    Dir[path].entries
+  end
+
   def folder
     File.join(settings.root, "user_files", self.user.id.to_s, self.id.to_s)
   end
