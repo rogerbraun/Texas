@@ -21,3 +21,6 @@ get "/documents/:id" do
   erb :show_document
 end
 
+get "/documents/:id/compile" do
+  @document.compile
+end
