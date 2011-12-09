@@ -11,16 +11,17 @@ class Document
   def compile
     doc = files.map{|file| Kramdown::Document.new(File.read(file)).to_latex}.join("\n")
     temp = File.join(self.folder, "tmp")
-    template_path = File.join(self.folder, "layout.tex")
-    template = File.read(template)
+    template_path = File.join(settings.root, "user_files", "layouts", "layout.tex")
+    template = File.read(template_path)
     
-    full_doc
+    full_doc = template.sub("YIELD_TITLE", self.title).sub("YIELD_AUTHOR",self.user.name).sub("YIELD_CONTENT", doc)
     
-    open(temp) do |file|
+    open(temp, "w") do |file|
       file.write full_doc
     end
 
-    system "xelatex"
+    system "xelatex -output-directory '#{self.folder}' '#{temp}'"
+    system "xelatex -output-directory '#{self.folder}' '#{temp}'"
      
   end
 
