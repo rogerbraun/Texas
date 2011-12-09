@@ -7,6 +7,7 @@ gem "dm-core"
 gem "dm-sqlite-adapter"
 gem "dm-migrations"
 gem "dm-validations"
+gem "kramdown"
 
 gem "bcrypt-ruby", :require => "bcrypt"
 

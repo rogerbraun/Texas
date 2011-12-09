@@ -1,0 +1,26 @@
+<div class="container">
+  <section>
+    <div class="row">
+      <div class="span6">
+        <h1>Datei anlegorn...</h1>
+      </div>
+      <div class="span10">
+        <h2>Neue Datei anlegen</h2>
+        <form id="new_file_form" action="<%= url "/documents/#{@document.id}/files/new" %>" method="post" class="form-stacked">
+          <fieldset>
+            <div class="clearfix">
+              <label for='title'>Dateiname</label>
+              <div class="input">
+                <input class="span10" id="name" name="name" type="text"/>
+              </div>
+            </div>
+            <div class="actions well">
+              <input type="submit" class="btn primary" value="Datei anlegen" />
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+

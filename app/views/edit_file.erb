@@ -1,0 +1,26 @@
+<div class="container">
+  <section>
+    <div class="row">
+      <div class="span6">
+        <h1>Datei bearbeitorn...</h1>
+      </div>
+      <div class="span10">
+        <h2>Datei bearbeiten</h2>
+        <form id="edit_file_form" action="<%= url "/documents/#{@document.id}/files/#{@filename}" %>" method="post" class="form-stacked">
+          <fieldset>
+            <div class="clearfix">
+              <label for='content'>Inhalt</label>
+              <div class="input">
+                <textarea name="content" id="content" class="span10"><%=@content %></textarea>
+              </div>
+            </div>
+            <div class="actions well">
+              <input type="submit" class="btn primary" value="Datei speichern" />
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+

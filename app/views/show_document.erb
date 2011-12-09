@@ -16,11 +16,13 @@
           <thead>
             <tr>
               <th>Dateiname</th>
+              <th></th>
             </tr>
           </thead>
           <% @document.files.each do |file| %>
             <tr>
               <td><%= file %></td>
+              <td><a href='<%= url "/documents/#{@document.id}/files/#{File.basename(file)}" %>'>Datei bearbeiten</a></td>
             </tr>
           <% end %>
         </table>

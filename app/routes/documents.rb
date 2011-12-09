@@ -22,5 +22,7 @@ get "/documents/:id" do
 end
 
 get "/documents/:id/compile" do
+  @document = Document.get(params[:id])
+  raise "Nicht berechtigt" if @document.user != current_user
   @document.compile
 end

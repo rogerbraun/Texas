@@ -37,6 +37,7 @@ GEM
     guard-rspec (0.5.4)
       guard (>= 0.8.4)
     json_pure (1.6.1)
+    kramdown (0.13.3)
     libnotify (0.6.0)
       ffi (~> 1.0.0)
     mime-types (1.17.2)
@@ -88,6 +89,7 @@ DEPENDENCIES
   dm-sqlite-adapter
   dm-validations
   guard-rspec
+  kramdown
   libnotify
   rack-test
   rake

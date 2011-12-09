@@ -6,12 +6,13 @@ Bundler.require
 # General Settings
 set :views, settings.root + "/app/views"
 enable :sessions
-set :session_secret, "MY3qkUGA553tr4fxfov3MeNF1PBw2mvpMsxyiRzBimcJhstWDE6L5IXBCNVzWzemNCQRosCKpn1pLlcp"
+set :session_secret, ENV["SESSION_SECRET"] || "MY3qkUGA553tr4fxfov3MeNF1PBw2mvpMsxyiRzBimcJhstWDE6L5IXBCNVzWzemNCQRosCKpn1pLlcp"
 
 # Routes
 require_relative "app/routes/index"
 require_relative "app/routes/authentication"
 require_relative "app/routes/documents"
+require_relative "app/routes/files"
 
 # Models
 require_relative "app/models/user"

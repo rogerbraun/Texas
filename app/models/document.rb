@@ -8,6 +8,22 @@ class Document
 
   after :create, :make_folders
 
+  def compile
+    doc = files.map{|file| Kramdown::Document.new(File.read(file)).to_latex}.join("\n")
+    temp = File.join(self.folder, "tmp")
+    template_path = File.join(self.folder, "layout.tex")
+    template = File.read(template)
+    
+    full_doc
+    
+    open(temp) do |file|
+      file.write full_doc
+    end
+
+    system "xelatex"
+     
+  end
+
   def files
     path = File.join(self.folder, "**", "*")
     Dir[path].entries
