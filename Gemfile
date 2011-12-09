@@ -1,5 +1,6 @@
 source :rubygems
 
+gem "rake"
 gem "sinatra"
 gem "sinatra-contrib", :require => "sinatra/reloader"
 gem "dm-core"
